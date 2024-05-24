@@ -1,0 +1,29 @@
+/* Privacy Policy Section Styles */
+.privacy-policy-section {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-policy-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.privacy-policy-section .last-updated {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.privacy-policy-section p {
+    margin-bottom: 10px;
+}
+
+.privacy-policy-section ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+

@@ -82,21 +82,17 @@ h2 {
     background: #e9e9e9;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
 }
 
-.thumbnail {
-    width: 80px;
-    height: 80px;
-    margin-left: auto;
-    margin-right: 10px;
-    border-radius: 5px;
+.project img.thumbnail, .contact-item img.thumbnail {
+    width: 50px;
+    height: 50px;
     object-fit: cover;
+    margin-right: 10px;
 }
 
 .project-content {
-    flex-grow: 1;
+    text-align: left;
 }
 
 .project h3 {
@@ -116,21 +112,25 @@ h2 {
     text-decoration: underline;
 }
 
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
 footer {
     text-align: center;
     padding: 10px 0;
     background: #333;
     color: #fff;
-}
-
-@media (max-width: 768px) {
-    .project, .sponsor {
-        flex: 1 1 100%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .thumbnail {
-        margin: 10px 0;
-    }
 }

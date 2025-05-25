@@ -1,0 +1,5 @@
+Contact: mailto:kng2okijf3re@opayq.net
+Expires: 2026-05-25T12:00:00Z
+Acknowledgements: https://github.com/Th3Tr1ckst3r
+Policy: https://adriantarver.com/privacy.html
+Preferred-Languages: en

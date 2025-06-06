@@ -96,16 +96,9 @@
 				</div>
 			</section>
 			<section id="sponsors">
-				<h2>Sponsors</h2>
-				<div class="sponsor-list">
-					<div class="sponsor">
-						<div id="c"></div>
-						<script>
-						  fetch('https://sponsors.th3tr1ckst3r.workers.dev/').then(r=>r.text()).then(t=>c.innerText=t).catch(e=>c.innerText='Error fetching content: '+e);
-						</script>
-						<p>You can support me on <a href="https://github.com/sponsors/Th3Tr1ckst3r">Github Sponsors</a>, & <a href="https://www.patreon.com/Th3Tr1ckst3r">Patreon.</a></p>
-					</div>
-				</div>
+			    <h2>Sponsors</h2>
+			    <pre id="sponsorContent">Loading sponsors...</pre>
+			    <p>You can support me on <a href="https://github.com/sponsors/Th3Tr1ckst3r">Github Sponsors</a>, & <a href="https://www.patreon.com/Th3Tr1ckst3r">Patreon.</a></p>
 			</section>
 			<section id="about">
 				<h2>About Me</h2>
@@ -134,5 +127,12 @@
 			}
 		</script>
 		<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script>
+		  const contentElement = document.getElementById('sponsorContent');
+		  fetch('https://sponsors.th3tr1ckst3r.workers.dev/')
+		    .then(response => response.text())
+		    .then(text => contentElement.textContent = text)
+		    .catch(error => contentElement.textContent = 'Error fetching content: ' + error.message);
+		</script>
 	</body>
 </html>

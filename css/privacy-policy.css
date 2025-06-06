@@ -11,7 +11,7 @@
        elements below to ensure they are visible. This prevents potential
        overrides that might make text disappear.
     */
-    /* color: #e0e0e0; <-- REMOVED/COMMENTED OUT THIS LINE */
+    /* color: #e0e0e0; <-- REMOVED/COMMENTED OUT THIS LINE */ /* This was the right move! */
     border-radius: 8px; /* Consistent rounded corners */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Consistent prominent, darker shadow */
     max-width: 800px; /* Adopt max-width from your main content */
@@ -28,6 +28,8 @@
     border-bottom: 2px solid #444; /* Consistent darker border for headings */
     padding-bottom: 5px; /* Consistent padding */
     margin-bottom: 10px; /* Consistent margin */
+    /* Add margin-top for consistent spacing between sections/subsections */
+    margin-top: 25px; /* Added for better vertical rhythm between headings */
 }
 
 .privacy-policy-section h1 {
@@ -50,6 +52,7 @@
     color: #c0c0c0; /* Lighter grey for consistency with other p tags - This color is sufficient */
     font-size: 14px;
     margin-bottom: 20px;
+    font-style: italic; /* Added for standard "last updated" look */
 }
 
 /* --- CRITICAL FIXES FOR MISSING TEXT AND READABILITY IMPROVEMENTS --- */
@@ -66,6 +69,7 @@
     margin-left: 20px; /* Indent list items */
     /* Ensure default list text color is bright too */
     color: #E0E0E0; /* Making sure list text is clearly visible. */
+    margin-bottom: 15px; /* Added space after the list */
 }
 
 .privacy-policy-section ul li {
@@ -76,7 +80,11 @@
 
 /* Styling for strong/bold text within the policy to make it pop */
 .privacy-policy-section p strong,
-.privacy-policy-section ul li strong {
+.privacy-policy-section ul li strong,
+.privacy-policy-section h1 strong, /* Added for safety if h1 has strong tags */
+.privacy-policy-section h2 strong,
+.privacy-policy-section h3 strong,
+.privacy-policy-section h4 strong {
     color: #FFFFFF; /* Make bold text pure white to stand out even more. */
     font-weight: bold; /* Ensure it remains bold if any other rule affects it. */
 }
@@ -93,4 +101,13 @@
 
 .privacy-policy-section a:visited {
     color: #90caf9; /* Ensures visited links are also blue, overriding browser default purple. */
+}
+
+/* Added for potential blockquotes if you use them */
+.privacy-policy-section blockquote {
+    border-left: 4px solid #555;
+    padding-left: 15px;
+    margin: 15px 0;
+    font-style: italic;
+    color: #c0c0c0; /* Ensure visibility for quotes */
 }

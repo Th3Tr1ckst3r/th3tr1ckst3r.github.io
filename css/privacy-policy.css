@@ -38,7 +38,6 @@
     font-size: 18px; /* Slightly smaller for h4, adjust as needed */
 }
 
-
 .privacy-policy-section .last-updated {
     color: #c0c0c0; /* Lighter grey for consistency with other p tags */
     font-size: 14px;
@@ -48,6 +47,7 @@
 .privacy-policy-section p {
     margin-bottom: 10px;
     color: #e0e0e0; /* Ensure paragraph text is light */
+    line-height: 1.6; /* **SUGGESTION: Add or adjust this for better readability** */
 }
 
 .privacy-policy-section ul {
@@ -59,6 +59,14 @@
 .privacy-policy-section ul li {
     margin-bottom: 5px; /* Add some vertical spacing for list items */
 }
+
+/* **SUGGESTION: Style for strong/bold text within the policy** */
+.privacy-policy-section p strong,
+.privacy-policy-section ul li strong {
+    color: #FFFFFF; /* Make bold text pure white to stand out more */
+    font-weight: bold; /* Ensure it remains bold */
+}
+
 
 /* Links within the privacy policy section */
 .privacy-policy-section a {

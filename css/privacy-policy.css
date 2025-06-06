@@ -1,9 +1,17 @@
+/* css/privacy-policy.css */
+
 /* Privacy Policy Section Styles */
 .privacy-policy-section {
     padding: 20px;
     margin-top: 20px;
     background-color: #1a1a1a; /* Dark background from your main theme */
-    color: #e0e0e0; /* Light text color from your main theme */
+    /*
+       IMPORTANT: We are removing the general 'color' property from here.
+       Instead, we will explicitly set colors for 'p', 'li', and other text
+       elements below to ensure they are visible. This prevents potential
+       overrides that might make text disappear.
+    */
+    /* color: #e0e0e0; <-- REMOVED/COMMENTED OUT THIS LINE */
     border-radius: 8px; /* Consistent rounded corners */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Consistent prominent, darker shadow */
     max-width: 800px; /* Adopt max-width from your main content */
@@ -16,7 +24,7 @@
 .privacy-policy-section h2,
 .privacy-policy-section h3,
 .privacy-policy-section h4 {
-    color: #f0f0f0; /* Brighter color for headings */
+    color: #f0f0f0; /* Brighter color for headings - This is good for visibility */
     border-bottom: 2px solid #444; /* Consistent darker border for headings */
     padding-bottom: 5px; /* Consistent padding */
     margin-bottom: 10px; /* Consistent margin */
@@ -39,45 +47,50 @@
 }
 
 .privacy-policy-section .last-updated {
-    color: #c0c0c0; /* Lighter grey for consistency with other p tags */
+    color: #c0c0c0; /* Lighter grey for consistency with other p tags - This color is sufficient */
     font-size: 14px;
     margin-bottom: 20px;
 }
 
+/* --- CRITICAL FIXES FOR MISSING TEXT AND READABILITY IMPROVEMENTS --- */
+
 .privacy-policy-section p {
     margin-bottom: 10px;
-    color: #e0e0e0; /* Ensure paragraph text is light */
-    line-height: 1.6; /* **SUGGESTION: Add or adjust this for better readability** */
+    /* This is crucial for paragraph text visibility. */
+    color: #E0E0E0; /* Ensuring paragraph text is a bright, readable light grey. */
+    line-height: 1.6; /* Improves readability by increasing vertical spacing between lines. */
 }
 
 .privacy-policy-section ul {
     list-style: disc; /* Keep disc style for consistency */
     margin-left: 20px; /* Indent list items */
-    color: #e0e0e0; /* Ensure list items are light */
+    /* Ensure default list text color is bright too */
+    color: #E0E0E0; /* Making sure list text is clearly visible. */
 }
 
 .privacy-policy-section ul li {
     margin-bottom: 5px; /* Add some vertical spacing for list items */
+    /* Explicitly setting color for li to be safe, even if inherited from ul. */
+    color: #E0E0E0; /* Crucial for individual list item text visibility. */
 }
 
-/* **SUGGESTION: Style for strong/bold text within the policy** */
+/* Styling for strong/bold text within the policy to make it pop */
 .privacy-policy-section p strong,
 .privacy-policy-section ul li strong {
-    color: #FFFFFF; /* Make bold text pure white to stand out more */
-    font-weight: bold; /* Ensure it remains bold */
+    color: #FFFFFF; /* Make bold text pure white to stand out even more. */
+    font-weight: bold; /* Ensure it remains bold if any other rule affects it. */
 }
-
 
 /* Links within the privacy policy section */
 .privacy-policy-section a {
-    color: #90caf9; /* Consistent softer, more readable blue for links */
-    text-decoration: none; /* Removes underline by default */
+    color: #90caf9; /* Consistent softer, more readable blue for links. */
+    text-decoration: none; /* Removes underline by default for a cleaner look. */
 }
 
 .privacy-policy-section a:hover {
-    text-decoration: underline; /* Adds underline on hover for better UX */
+    text-decoration: underline; /* Adds underline on hover for better user experience. */
 }
 
 .privacy-policy-section a:visited {
-    color: #90caf9; /* Ensures visited links are also blue, overriding browser default purple */
+    color: #90caf9; /* Ensures visited links are also blue, overriding browser default purple. */
 }

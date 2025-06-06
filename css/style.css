@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #1a1a1a; /* Dark background for the body */
+    background: #121212; /* Even darker background for the body */
     color: #e0e0e0; /* Light text color for readability */
 }
 
 header {
-    background: #2a2a2a; /* Slightly darker header background */
+    background: #1a1a1a; /* Darker header background, consistent with body */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -17,7 +17,7 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #444; /* Darker border for profile picture */
+    border: 5px solid #333; /* Darker border for profile picture */
     margin-bottom: 10px;
 }
 
@@ -30,7 +30,7 @@ header {
 }
 
 nav {
-    background: #333; /* Darker navigation background */
+    background: #202020; /* Darker navigation background */
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -56,8 +56,9 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
-    background: #222; /* Darker main content background */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+    background: #1a1a1a; /* Darker main content background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* More prominent, darker shadow */
+    border-radius: 8px; /* Slightly rounded corners for the main content area */
 }
 
 section {
@@ -65,9 +66,9 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #555; /* Lighter border for headings */
+    border-bottom: 2px solid #444; /* Darker border for headings */
     padding-bottom: 5px;
-    color: #fff; /* Ensure headings are bright */
+    color: #e0e0e0; /* Ensure headings are bright */
 }
 
 .project-list, .sponsor-list {
@@ -79,37 +80,44 @@ h2 {
 .project, .sponsor {
     flex: 1 1 calc(50% - 20px);
     margin: 10px;
-    padding: 10px;
-    background: #333; /* Darker project/sponsor background */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    padding: 15px; /* Increased padding for better spacing */
+    background: #2a2a2a; /* Darker project/sponsor background */
+    border-radius: 8px; /* Rounded corners for project boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker and more noticeable shadow */
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align content to the top */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.project:hover, .sponsor:hover {
+    background: #3a3a3a; /* Slightly lighter on hover for interaction */
 }
 
 .project img.thumbnail {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right: 15px; /* Increased margin for spacing */
+    border-radius: 4px; /* Slightly rounded corners for thumbnails */
 }
 
 .project-content {
     text-align: left;
+    flex-grow: 1; /* Allow content to take available space */
 }
 
 .project h3 {
     margin: 0 0 10px 0;
-    color: #eee; /* Light color for project titles */
+    color: #f0f0f0; /* Brighter color for project titles */
 }
 
 .project p {
     margin: 0 0 10px 0;
-    color: #bbb; /* Slightly lighter color for project descriptions */
+    color: #c0c0c0; /* Consistent lighter color for project descriptions */
 }
 
 .project a {
-    color: #8ab4f8; /* A vibrant, yet readable blue for links */
+    color: #90caf9; /* A softer, more readable blue for links on dark background */
     text-decoration: none;
 }
 
@@ -121,17 +129,27 @@ h2 {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    background: #2a2a2a; /* Dark background for contact items */
+    padding: 10px 15px; /* Add padding for visual appeal */
+    border-radius: 8px; /* Rounded corners for contact items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-item:hover {
+    background: #3a3a3a; /* Slightly lighter on hover */
 }
 
 .contact-item img.thumbnail {
     width: 30px;
     height: 30px;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right: 15px; /* Increased margin */
+    border-radius: 50%; /* Make contact thumbnails circular */
 }
 
 .contact-item a {
-    color: #8ab4f8; /* Consistent link color */
+    color: #90caf9; /* Consistent link color */
     text-decoration: none;
 }
 
@@ -141,7 +159,8 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #2a2a2a; /* Darker footer background */
+    padding: 15px 0; /* Increased padding */
+    background: #1a1a1a; /* Darker footer background, consistent with header */
     color: #fff;
+    margin-top: 30px; /* Add some space above the footer */
 }

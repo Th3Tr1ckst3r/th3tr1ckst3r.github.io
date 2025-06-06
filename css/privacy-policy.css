@@ -2,28 +2,74 @@
 .privacy-policy-section {
     padding: 20px;
     margin-top: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1a1a1a; /* Dark background from your main theme */
+    color: #e0e0e0; /* Light text color from your main theme */
+    border-radius: 8px; /* Consistent rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Consistent prominent, darker shadow */
+    max-width: 800px; /* Adopt max-width from your main content */
+    margin-left: auto; /* Center the section */
+    margin-right: auto; /* Center the section */
+}
+
+/* Headings within the privacy policy section */
+.privacy-policy-section h1,
+.privacy-policy-section h2,
+.privacy-policy-section h3,
+.privacy-policy-section h4 {
+    color: #f0f0f0; /* Brighter color for headings */
+    border-bottom: 2px solid #444; /* Consistent darker border for headings */
+    padding-bottom: 5px; /* Consistent padding */
+    margin-bottom: 10px; /* Consistent margin */
 }
 
 .privacy-policy-section h1 {
     font-size: 24px;
-    margin-bottom: 10px;
 }
 
+.privacy-policy-section h2 {
+    font-size: 22px; /* Slightly smaller for h2, adjust as needed */
+}
+
+.privacy-policy-section h3 {
+    font-size: 20px; /* Slightly smaller for h3, adjust as needed */
+}
+
+.privacy-policy-section h4 {
+    font-size: 18px; /* Slightly smaller for h4, adjust as needed */
+}
+
+
 .privacy-policy-section .last-updated {
-    color: #666;
+    color: #c0c0c0; /* Lighter grey for consistency with other p tags */
     font-size: 14px;
     margin-bottom: 20px;
 }
 
 .privacy-policy-section p {
     margin-bottom: 10px;
+    color: #e0e0e0; /* Ensure paragraph text is light */
 }
 
 .privacy-policy-section ul {
-    list-style: disc;
-    margin-left: 20px;
+    list-style: disc; /* Keep disc style for consistency */
+    margin-left: 20px; /* Indent list items */
+    color: #e0e0e0; /* Ensure list items are light */
 }
 
+.privacy-policy-section ul li {
+    margin-bottom: 5px; /* Add some vertical spacing for list items */
+}
+
+/* Links within the privacy policy section */
+.privacy-policy-section a {
+    color: #90caf9; /* Consistent softer, more readable blue for links */
+    text-decoration: none; /* Removes underline by default */
+}
+
+.privacy-policy-section a:hover {
+    text-decoration: underline; /* Adds underline on hover for better UX */
+}
+
+.privacy-policy-section a:visited {
+    color: #90caf9; /* Ensures visited links are also blue, overriding browser default purple */
+}

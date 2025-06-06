@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #1a1a1a; /* Dark background for the body */
+    color: #e0e0e0; /* Light text color for readability */
 }
 
 header {
-    background: #333;
+    background: #2a2a2a; /* Slightly darker header background */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -17,7 +17,7 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 5px solid #444; /* Darker border for profile picture */
     margin-bottom: 10px;
 }
 
@@ -30,7 +30,7 @@ header {
 }
 
 nav {
-    background: #444;
+    background: #333; /* Darker navigation background */
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -56,8 +56,8 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #222; /* Darker main content background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
 }
 
 section {
@@ -65,8 +65,26 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #555; /* Lighter border for headings */
     padding-bottom: 5px;
+    color: #fff; /* Ensure headings are bright */
+}
+
+.project-list, .sponsor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project, .sponsor {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    padding: 10px;
+    background: #333; /* Darker project/sponsor background */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    display: flex;
+    align-items: center;
 }
 
 .project img.thumbnail {
@@ -82,14 +100,16 @@ h2 {
 
 .project h3 {
     margin: 0 0 10px 0;
+    color: #eee; /* Light color for project titles */
 }
 
 .project p {
     margin: 0 0 10px 0;
+    color: #bbb; /* Slightly lighter color for project descriptions */
 }
 
 .project a {
-    color: #007BFF;
+    color: #8ab4f8; /* A vibrant, yet readable blue for links */
     text-decoration: none;
 }
 
@@ -111,7 +131,7 @@ h2 {
 }
 
 .contact-item a {
-    color: #007BFF;
+    color: #8ab4f8; /* Consistent link color */
     text-decoration: none;
 }
 
@@ -122,6 +142,6 @@ h2 {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #333;
+    background: #2a2a2a; /* Darker footer background */
     color: #fff;
 }

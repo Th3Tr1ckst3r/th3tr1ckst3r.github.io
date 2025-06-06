@@ -99,6 +99,10 @@
 				<h2>Sponsors</h2>
 				<div class="sponsor-list">
 					<div class="sponsor">
+						<div id="c"></div>
+						<script>
+						  fetch('https://sponsors.th3tr1ckst3r.workers.dev/').then(r=>r.text()).then(t=>c.innerText=t).catch(e=>c.innerText='Error fetching content: '+e);
+						</script>
 						<p>You can support me on <a href="https://github.com/sponsors/Th3Tr1ckst3r">Github Sponsors</a>, & <a href="https://www.patreon.com/Th3Tr1ckst3r">Patreon.</a></p>
 					</div>
 				</div>

@@ -1,17 +1,37 @@
 /* style.css - COMBINED STYLES */
 
+/* --- CSS VARIABLES FOR THEME --- */
+:root {
+    --bg-dark-primary: #121212; /* Even darker background for the body */
+    --bg-dark-secondary: #1a1a1a; /* Darker header/main/footer background */
+    --bg-dark-tertiary: #202020; /* Darker navigation background */
+    --bg-dark-card: #2a2a2a; /* Darker project/sponsor/contact background */
+    --bg-dark-card-hover: #3a3a3a; /* Slightly lighter on hover for interaction */
+
+    --text-light-primary: #e0e0e0; /* Light text color for readability */
+    --text-light-secondary: #c0c0c0; /* Consistent lighter color for descriptions */
+    --text-light-heading: #f0f0f0; /* Brighter color for project titles */
+    --link-color: #90caf9; /* A softer, more readable blue for links on dark background */
+    --border-dark: #444; /* Darker border for headings */
+    --border-profile: #333; /* Darker border for profile picture */
+    --shadow-strong: rgba(0, 0, 0, 0.6); /* More prominent, darker shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.4); /* Darker and more noticeable shadow */
+    --shadow-light: rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
 /* --- GENERAL BODY AND LAYOUT STYLES --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #121212; /* Even darker background for the body */
-    color: #e0e0e0; /* Light text color for readability */
+    background: var(--bg-dark-primary);
+    color: var(--text-light-primary);
+    line-height: 1.6; /* Added for better readability */
 }
 
 header {
-    background: #1a1a1a; /* Darker header background, consistent with body */
-    color: #fff;
+    background: var(--bg-dark-secondary);
+    color: #fff; /* Keeping this as pure white for stark contrast */
     padding: 20px 0;
     text-align: center;
 }
@@ -20,12 +40,14 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #333; /* Darker border for profile picture */
+    border: 5px solid var(--border-profile);
     margin-bottom: 10px;
 }
 
 .intro h1 {
     margin: 0;
+    font-size: 2.5em; /* Example size */
+    font-weight: bold;
 }
 
 .intro p {
@@ -33,8 +55,8 @@ header {
 }
 
 nav {
-    background: #202020; /* Darker navigation background */
-    color: #fff;
+    background: var(--bg-dark-tertiary);
+    color: #fff; /* Keeping this as pure white for stark contrast */
     text-align: center;
     padding: 10px 0;
 }
@@ -51,7 +73,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* Keeping this as pure white for stark contrast */
     text-decoration: none;
 }
 
@@ -59,9 +81,9 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
-    background: #1a1a1a; /* Darker main content background */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* More prominent, darker shadow */
-    border-radius: 8px; /* Slightly rounded corners for the main content area */
+    background: var(--bg-dark-secondary);
+    box-shadow: 0 0 15px var(--shadow-strong);
+    border-radius: 8px;
 }
 
 section {
@@ -69,9 +91,16 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #444; /* Darker border for headings */
+    border-bottom: 2px solid var(--border-dark);
     padding-bottom: 5px;
-    color: #e0e0e0; /* Ensure headings are bright */
+    color: var(--text-light-primary);
+    font-size: 2em; /* Example size */
+    font-weight: bold;
+}
+
+h3 { /* Added for consistent heading styling */
+    font-size: 1.5em; /* Example size */
+    font-weight: bold;
 }
 
 .project-list, .sponsor-list {
@@ -83,44 +112,45 @@ h2 {
 .project, .sponsor {
     flex: 1 1 calc(50% - 20px);
     margin: 10px;
-    padding: 15px; /* Increased padding for better spacing */
-    background: #2a2a2a; /* Darker project/sponsor background */
-    border-radius: 8px; /* Rounded corners for project boxes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker and more noticeable shadow */
+    padding: 15px;
+    background: var(--bg-dark-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-medium);
     display: flex;
-    align-items: flex-start; /* Align content to the top */
-    transition: background 0.3s ease; /* Smooth transition for hover effect */
+    align-items: flex-start;
+    transition: background 0.3s ease;
 }
 
 .project:hover, .sponsor:hover {
-    background: #3a3a3a; /* Slightly lighter on hover for interaction */
+    background: var(--bg-dark-card-hover);
 }
 
 .project img.thumbnail {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin-right: 15px; /* Increased margin for spacing */
-    border-radius: 4px; /* Slightly rounded corners for thumbnails */
+    margin-right: 15px;
+    border-radius: 4px;
 }
 
 .project-content {
     text-align: left;
-    flex-grow: 1; /* Allow content to take available space */
+    flex-grow: 1;
 }
 
 .project h3 {
     margin: 0 0 10px 0;
-    color: #f0f0f0; /* Brighter color for project titles */
+    color: var(--text-light-heading);
 }
 
 .project p {
     margin: 0 0 10px 0;
-    color: #c0c0c0; /* Consistent lighter color for project descriptions */
+    color: var(--text-light-secondary);
+    line-height: 1.5; /* Slightly tighter for project descriptions */
 }
 
 .project a {
-    color: #90caf9; /* A softer, more readable blue for links on dark background */
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -132,27 +162,27 @@ h2 {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    background: #2a2a2a; /* Dark background for contact items */
-    padding: 10px 15px; /* Add padding for visual appeal */
-    border-radius: 8px; /* Rounded corners for contact items */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    transition: background 0.3s ease; /* Smooth transition for hover effect */
+    background: var(--bg-dark-card);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    transition: background 0.3s ease;
 }
 
 .contact-item:hover {
-    background: #3a3a3a; /* Slightly lighter on hover */
+    background: var(--bg-dark-card-hover);
 }
 
 .contact-item img.thumbnail {
     width: 30px;
     height: 30px;
     object-fit: cover;
-    margin-right: 15px; /* Increased margin */
-    border-radius: 50%; /* Make contact thumbnails circular */
+    margin-right: 15px;
+    border-radius: 50%;
 }
 
 .contact-item a {
-    color: #90caf9; /* Consistent link color */
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -162,23 +192,63 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 15px 0; /* Increased padding */
-    background: #1a1a1a; /* Darker footer background, consistent with header */
-    color: #fff;
-    margin-top: 30px; /* Add some space above the footer */
+    padding: 15px 0;
+    background: var(--bg-dark-secondary);
+    color: #fff; /* Keeping this as pure white for stark contrast */
+    margin-top: 30px;
 }
 
 /* New styles for sponsor links */
 #sponsors p a {
-    color: #90caf9; /* A shade of blue that looks good on dark backgrounds */
-    text-decoration: none; /* Removes underline by default */
+    color: var(--link-color);
+    text-decoration: none;
 }
 
 #sponsors p a:hover {
-    text-decoration: underline; /* Adds underline on hover for better UX */
+    text-decoration: underline;
 }
 
 /* Ensure visited links are also blue, overriding browser default purple */
 #sponsors p a:visited {
-    color: #90caf9;
+    color: var(--link-color);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    /* Adjust main padding and margin for smaller screens */
+    main {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    /* Stack project and sponsor items vertically */
+    .project-list, .sponsor-list {
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .project, .sponsor {
+        flex: 1 1 100%; /* Take full width on smaller screens */
+        margin: 10px 0; /* Adjust margin for stacking */
+        max-width: 95%; /* Prevent touching edges on very small screens */
+    }
+
+    .project img.thumbnail {
+        width: 80px; /* Slightly smaller thumbnails on mobile */
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    /* Adjust navigation for smaller screens */
+    nav ul li {
+        display: block; /* Stack nav items vertically */
+        margin: 5px 0;
+    }
+}
+
+/* --- GOOGLE TRANSLATE ELEMENT STYLING --- */
+#google_translate_element {
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: -15px; /* Adjust if it creates too much space */
 }

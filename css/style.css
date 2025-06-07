@@ -188,7 +188,8 @@ footer {
 
 .privacy-policy-section {
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 0; /* Changed from 20px to 0 as main already has top margin.
+                       If you want internal margin within the main box for the section, keep 20px here. */
     background-color: #1a1a1a; /* Dark background from your main theme */
     /*
        IMPORTANT: We are removing the general 'color' property from here.
@@ -199,12 +200,26 @@ footer {
     /* color: #e0e0e0; <-- REMOVED/COMMENTED OUT THIS LINE */
     border-radius: 8px; /* Consistent rounded corners */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Consistent prominent, darker shadow */
-    max-width: 800px; /* Adopt max-width from your main content */
-    margin-left: auto; /* Center the section */
-    margin-right: auto; /* Center the section */
 
-    /* ADDING a fallback color here with !important just in case.
-       This is generally a last resort, but useful for debugging overriding issues. */
+    /* These values are now handled by the <main> tag itself (which was added to privacy.html).
+       We can comment them out here, as the <main> tag's styles will apply directly.
+       Keeping them might cause redundancy but generally won't break anything if less specific.
+    */
+    /* max-width: 800px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+
+
+    /* ----- CRITICAL FIXES FOR THE TWO-BOX ISSUE ----- */
+    /* These properties are crucial to ensure it takes up the full width within its parent (<main>)
+       and doesn't behave like a flex item intended for a multi-column layout. */
+    display: block; /* Ensure it's a block-level element */
+    flex: none !important; /* Reset any flex item properties it might inherit */
+    width: auto !important; /* Ensure it takes the full available width of its parent */
+    box-sizing: border-box; /* Standard box model */
+    min-width: 0; /* Reset any minimum width constraints that could prevent it from shrinking correctly */
+
+    /* Adding a fallback color here with !important just in case for older browsers or complex overrides. */
     color: #e0e0e0 !important;
 }
 
@@ -218,6 +233,10 @@ footer {
     padding-bottom: 5px; /* Consistent padding */
     margin-bottom: 10px; /* Consistent margin */
     margin-top: 25px; /* Added for better vertical rhythm between headings */
+
+    /* Ensure headings also don't get split by flex properties */
+    width: auto; /* Ensure headings don't have a fixed width */
+    flex: none !important; /* Reset flex on headings if they inherited it */
 }
 
 .privacy-policy-section h1 {
@@ -241,6 +260,9 @@ footer {
     font-size: 14px;
     margin-bottom: 20px;
     font-style: italic; /* Added for standard "last updated" look */
+    /* Also apply flex reset here for safety */
+    width: auto !important;
+    flex: none !important;
 }
 
 /* --- CRITICAL FIXES FOR MISSING TEXT AND READABILITY IMPROVEMENTS --- */
@@ -250,6 +272,10 @@ footer {
     margin-bottom: 10px;
     color: #E0E0E0 !important; /* Use !important here for maximum override power */
     line-height: 1.6; /* Improves readability by increasing vertical spacing between lines. */
+    /* Ensure paragraphs also don't get split by flex properties */
+    width: auto !important; /* Ensure text elements take full available width */
+    flex: none !important; /* Reset flex on these elements */
+    box-sizing: border-box; /* Ensure proper box model */
 }
 
 /* Ensure raw text within list items is also targeted */
@@ -259,6 +285,9 @@ footer {
     margin-left: 20px; /* Indent list items */
     color: #E0E0E0 !important; /* Use !important here */
     margin-bottom: 15px; /* Added space after the list */
+    /* Ensure lists also don't get split by flex properties */
+    width: auto !important;
+    flex: none !important;
 }
 
 /* Ensure individual list item text color */
@@ -266,6 +295,9 @@ footer {
 .privacy-policy-section ol li { /* Added ol li for completeness */
     margin-bottom: 5px; /* Add some vertical spacing for list items */
     color: #E0E0E0 !important; /* Use !important here for each list item */
+    /* Ensure list items also don't get split by flex properties */
+    width: auto !important;
+    flex: none !important;
 }
 
 /* Styling for strong/bold text within the policy to make it pop */

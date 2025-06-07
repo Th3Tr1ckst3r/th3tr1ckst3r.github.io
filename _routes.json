@@ -7,7 +7,7 @@
   "routes": [
     {
       "pattern": "/sponsors-api",
-      "destination": "sponsors-th3tr1ckst3r"
+      "destination": "sponsors"
     }
   ]
 }

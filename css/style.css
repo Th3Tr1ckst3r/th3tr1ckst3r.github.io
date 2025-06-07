@@ -253,8 +253,7 @@ footer {
     margin-bottom: -15px; /* Adjust if it creates too much space */
 }
 
-
-/* Add to your style.css */
+/* style.css - NEW STYLES FOR PRIVACY POLICY LISTS */
 
 /* General paragraphs within main for better spacing/readability */
 main p {
@@ -263,19 +262,61 @@ main p {
     color: var(--text-light-primary); /* Ensure consistency for all main paragraphs */
 }
 
-/* Specific styling for lists within the main content,
-   to make them slightly more visually distinct, similar to card elements. */
+/* Specific styling for lists within the main content */
 main ul {
-    list-style-type: disc; /* Ensure standard disc bullets */
-    margin-left: 20px; /* Indent lists for readability */
-    padding-left: 0;
+    list-style: none; /* Remove default bullets, we'll use custom styling */
+    padding: 0;
+    margin-left: 0;
     margin-bottom: 20px; /* Space after lists */
 }
 
 main ul li {
-    margin-bottom: 8px; /* Space between list items */
+    background: var(--bg-dark-card); /* Use the card background color */
+    border-radius: 6px; /* Slightly rounded corners */
+    padding: 10px 15px; /* Padding inside the list item */
+    margin-bottom: 10px; /* Space between list items */
+    box-shadow: 0 2px 4px var(--shadow-light); /* Subtle shadow for depth */
     color: var(--text-light-primary); /* Consistent text color */
+    position: relative; /* Needed for custom bullet */
+    padding-left: 30px; /* Space for custom bullet */
+    line-height: 1.5; /* Good line height for list items */
 }
+
+/* Custom bullet point for list items */
+main ul li::before {
+    content: "\2022"; /* Unicode for a solid bullet point */
+    color: var(--link-color); /* Use your accent color for bullets */
+    font-size: 1.2em; /* Make the bullet slightly larger */
+    position: absolute;
+    left: 10px; /* Position the bullet */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Remove special styling for nested lists that don't need cards (e.g., within definition <li>) */
+main ul li ul {
+    background: none; /* No background for nested lists */
+    box-shadow: none; /* No shadow for nested lists */
+    border-radius: 0; /* No border-radius for nested lists */
+    padding: 0;
+    margin-left: 20px; /* Standard indentation for nested lists */
+    margin-top: 5px; /* Small space above nested list */
+    margin-bottom: 0; /* No extra space after nested list */
+}
+
+main ul li ul li {
+    background: none; /* No background for nested list items */
+    box-shadow: none; /* No shadow for nested list items */
+    padding: 0;
+    margin-bottom: 5px; /* Smaller space between nested list items */
+    padding-left: 20px; /* Space for default nested bullet */
+    position: static; /* Reset position for nested list items */
+}
+
+main ul li ul li::before {
+    content: ""; /* Remove custom bullet for nested items */
+}
+
 
 /* Style for the "last updated" paragraph */
 .last-updated {

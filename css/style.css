@@ -252,3 +252,64 @@ footer {
     padding-top: 15px;
     margin-bottom: -15px; /* Adjust if it creates too much space */
 }
+
+
+/* Add to your style.css */
+
+/* General paragraphs within main for better spacing/readability */
+main p {
+    margin-bottom: 1em; /* Ensures a consistent space between paragraphs */
+    line-height: 1.6; /* Already added to body, but explicitly setting here */
+    color: var(--text-light-primary); /* Ensure consistency for all main paragraphs */
+}
+
+/* Specific styling for lists within the main content,
+   to make them slightly more visually distinct, similar to card elements. */
+main ul {
+    list-style-type: disc; /* Ensure standard disc bullets */
+    margin-left: 20px; /* Indent lists for readability */
+    padding-left: 0;
+    margin-bottom: 20px; /* Space after lists */
+}
+
+main ul li {
+    margin-bottom: 8px; /* Space between list items */
+    color: var(--text-light-primary); /* Consistent text color */
+}
+
+/* Style for the "last updated" paragraph */
+.last-updated {
+    font-style: italic;
+    color: var(--text-light-secondary); /* Slightly dimmer */
+    margin-top: -10px; /* Pull it closer to the main H1 */
+    margin-bottom: 20px; /* Space after it */
+    text-align: right; /* Often placed at the top right */
+    font-size: 0.9em;
+}
+
+/* Enhancing the general a links inside main content */
+main a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--link-color); /* Keep color consistent on hover */
+}
+
+main a:visited {
+    color: var(--link-color); /* Ensure visited links are the same color */
+}
+
+/* Small adjustment for the Free Privacy Policy Generator link */
+main p a[href*="freeprivacypolicy.com"] {
+    font-weight: bold;
+}
+
+/* Adjust contact link at the very end of privacy policy */
+main h2 + p a[href*="adriantarver.com/#contact"] {
+    font-weight: bold;
+    color: var(--link-color);
+}

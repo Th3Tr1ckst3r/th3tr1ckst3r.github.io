@@ -103,13 +103,14 @@ h3 { /* Added for consistent heading styling */
     font-weight: bold;
 }
 
-.project-list, .sponsor-list {
+/* --- PROJECT LIST STYLES --- */
+.project-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.project, .sponsor {
+.project {
     flex: 1 1 calc(50% - 20px);
     margin: 10px;
     padding: 15px;
@@ -121,7 +122,7 @@ h3 { /* Added for consistent heading styling */
     transition: background 0.3s ease;
 }
 
-.project:hover, .sponsor:hover {
+.project:hover {
     background: var(--bg-dark-card-hover);
 }
 
@@ -158,6 +159,84 @@ h3 { /* Added for consistent heading styling */
     text-decoration: underline;
 }
 
+/* --- SPONSORS SECTION STYLES (NEW) --- */
+/* This is the container for the dynamically loaded sponsors */
+.sponsors-grid {
+    display: grid;
+    /* Responsive grid: auto-fill columns, min 200px, max 1fr */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* Space between grid items */
+    padding: 10px 0; /* Adjust padding as needed for the grid itself */
+    margin-bottom: 20px; /* Space below the grid of sponsors */
+}
+
+/* Individual sponsor card styling */
+.sponsor-card {
+    background-color: var(--bg-dark-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-medium);
+    overflow: hidden; /* Ensures avatar corners are rounded */
+    text-align: center;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+    display: flex; /* Makes content inside flexible */
+    flex-direction: column; /* Stack avatar, name, tier, price vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 15px; /* Padding inside the card */
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    background-color: var(--bg-dark-card-hover);
+    box-shadow: 0 4px 10px var(--shadow-strong);
+}
+
+.sponsor-link {
+    text-decoration: none; /* Remove underline from the whole card link */
+    color: inherit; /* Inherit text color from parent */
+    display: flex; /* Make the whole link content flexible */
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure link takes full width of card */
+}
+
+.sponsor-avatar {
+    width: 90px; /* Slightly larger avatar */
+    height: 90px;
+    border-radius: 50%; /* Circular avatar */
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid var(--link-color); /* Accent border around avatar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+}
+
+.sponsor-info {
+    padding: 0 5px; /* Small horizontal padding */
+    width: 100%; /* Ensure info section takes full width */
+}
+
+.sponsor-name {
+    font-size: 1.2em; /* Slightly larger name */
+    margin: 8px 0 5px; /* Spacing for name */
+    color: var(--text-light-heading); /* Brighter for name */
+    line-height: 1.2;
+}
+
+.sponsor-tier {
+    font-size: 0.95em;
+    color: var(--text-light-secondary); /* Consistent lighter color for tier */
+    margin: 5px 0;
+}
+
+.sponsor-price {
+    font-size: 0.88em;
+    color: var(--text-light-secondary); /* Consistent lighter color for price */
+    margin: 5px 0 0;
+    font-weight: bold; /* Make price stand out a bit */
+}
+
+
+/* --- CONTACT SECTION STYLES --- */
 .contact-item {
     display: flex;
     align-items: center;
@@ -190,27 +269,13 @@ h3 { /* Added for consistent heading styling */
     text-decoration: underline;
 }
 
+/* --- FOOTER STYLES --- */
 footer {
     text-align: center;
     padding: 15px 0;
     background: var(--bg-dark-secondary);
     color: #fff; /* Keeping this as pure white for stark contrast */
     margin-top: 30px;
-}
-
-/* New styles for sponsor links */
-#sponsors p a {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
-#sponsors p a:hover {
-    text-decoration: underline;
-}
-
-/* Ensure visited links are also blue, overriding browser default purple */
-#sponsors p a:visited {
-    color: var(--link-color);
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
@@ -221,13 +286,13 @@ footer {
         margin: 15px auto;
     }
 
-    /* Stack project and sponsor items vertically */
-    .project-list, .sponsor-list {
+    /* Project list stacks vertically */
+    .project-list {
         flex-direction: column; /* Stack vertically */
         align-items: center; /* Center items when stacked */
     }
 
-    .project, .sponsor {
+    .project {
         flex: 1 1 100%; /* Take full width on smaller screens */
         margin: 10px 0; /* Adjust margin for stacking */
         max-width: 95%; /* Prevent touching edges on very small screens */
@@ -237,6 +302,42 @@ footer {
         width: 80px; /* Slightly smaller thumbnails on mobile */
         height: 80px;
         margin-right: 10px;
+    }
+
+    /* Sponsor grid stacks vertically on mobile */
+    .sponsors-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 15px;
+    }
+
+    /* Sponsor card becomes horizontal on mobile */
+    .sponsor-card {
+        flex-direction: row; /* Make cards horizontal on smaller screens */
+        text-align: left;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .sponsor-avatar {
+        width: 60px; /* Smaller avatar on mobile */
+        height: 60px;
+        margin-right: 15px;
+        margin-bottom: 0; /* Remove bottom margin for horizontal layout */
+    }
+
+    .sponsor-info {
+        flex-grow: 1; /* Allow info to take remaining space */
+        padding: 0; /* Remove padding for tighter layout */
+    }
+
+    .sponsor-name {
+        font-size: 1.1em;
+        margin: 0; /* Reset margins for mobile */
+    }
+
+    .sponsor-tier, .sponsor-price {
+        font-size: 0.8em;
+        margin: 2px 0; /* Smaller margins for mobile */
     }
 
     /* Adjust navigation for smaller screens */
@@ -253,8 +354,7 @@ footer {
     margin-bottom: -15px; /* Adjust if it creates too much space */
 }
 
-/* style.css - NEW STYLES FOR PRIVACY POLICY LISTS */
-
+/* --- PRIVACY POLICY LISTS & GENERAL MAIN CONTENT STYLES --- */
 /* General paragraphs within main for better spacing/readability */
 main p {
     margin-bottom: 1em; /* Ensures a consistent space between paragraphs */

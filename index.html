@@ -126,7 +126,7 @@
 		<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 		<script>
 		  const contentElement = document.getElementById('sponsorContent');
-		  fetch('https://sponsors.th3tr1ckst3r.workers.dev/')
+		  fetch('https://www.adriantarver.com/sponsors-api')
 		    .then(response => response.text())
 		    .then(text => contentElement.textContent = text)
 		    .catch(error => contentElement.textContent = 'Error fetching content: ' + error.message);
